@@ -31,6 +31,7 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.register(MessageCell.self, forCellWithReuseIdentifier: cellID)
         
         setupData()
+        //clearData()
     }
     
     func clearData() {
@@ -58,110 +59,37 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         
         clearData()
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let sarvesh = IncomingMessage.createFriend(name: "Sarvesh Sharma", profileImageName: "sarveshProfile")
+        IncomingMessage.createMessage(newFriend: sarvesh, text: "Hi!", timeAgo: 25)
+        IncomingMessage.createMessage(newFriend: sarvesh, text: "Hi!", timeAgo: 24, isSender: true)
+        IncomingMessage.createMessage(newFriend: sarvesh, text: "Who is this?", timeAgo: 23, isSender: true)
+        IncomingMessage.createMessage(newFriend: sarvesh, text: "I am Sarvesh Sharma", timeAgo: 22)
+        IncomingMessage.createMessage(newFriend: sarvesh, text: "Oh!", timeAgo: 21, isSender: true)
+        IncomingMessage.createMessage(newFriend: sarvesh, text: "I remember you.", timeAgo: 20, isSender: true)
         
-        let samarth = Friend(context: context)
-        samarth.name = "Samarth Paboowal"
-        samarth.profileImageName = "profileImage"
+        let rishabh = IncomingMessage.createFriend(name: "Rishabh Sharma", profileImageName: "rishabhProfile")
+        IncomingMessage.createMessage(newFriend: rishabh, text: "Hi!", timeAgo: 15)
+        IncomingMessage.createMessage(newFriend: rishabh, text: "Hi!", timeAgo: 14, isSender: true)
+        IncomingMessage.createMessage(newFriend: rishabh, text: "Who is this?", timeAgo: 13, isSender: true)
+        IncomingMessage.createMessage(newFriend: rishabh, text: "I am Rishabh Sharma", timeAgo: 12)
+        IncomingMessage.createMessage(newFriend: rishabh, text: "Oh!", timeAgo: 11, isSender: true)
+        IncomingMessage.createMessage(newFriend: rishabh, text: "I remember you.", timeAgo: 10, isSender: true)
         
+        let shubham = IncomingMessage.createFriend(name: "Shubham Sharma", profileImageName: "profileShubham")
+        IncomingMessage.createMessage(newFriend: shubham, text: "Hi!", timeAgo: 19)
+        IncomingMessage.createMessage(newFriend: shubham, text: "Hi!", timeAgo: 18, isSender: true)
+        IncomingMessage.createMessage(newFriend: shubham, text: "Who is this?", timeAgo: 17, isSender: true)
+        IncomingMessage.createMessage(newFriend: shubham, text: "I am Shubham Sharma", timeAgo: 16)
+        IncomingMessage.createMessage(newFriend: shubham, text: "Oh!", timeAgo: 15, isSender: true)
+        IncomingMessage.createMessage(newFriend: shubham, text: "I remember you.", timeAgo: 14, isSender: true)
         
-        let messageSamarth = Message(context: context)
-        messageSamarth.friend = samarth
-        messageSamarth.text = "Hi, this is Samarth Paboowal"
-        messageSamarth.date = NSDate().addingTimeInterval(-2*60)
-        messageSamarth.isSender = NSNumber(booleanLiteral: false) as Bool
-        
-        let messageSamarth2 = Message(context: context)
-        messageSamarth2.friend = samarth
-        messageSamarth2.text = "I know you're gOd."
-        messageSamarth2.date = NSDate().addingTimeInterval(-2*60)
-        messageSamarth2.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let sarvesh = Friend(context: context)
-        sarvesh.name = "Sarvesh Sharma"
-        sarvesh.profileImageName = "sarveshProfile"
-        
-        let messageSarvesh = Message(context: context)
-        messageSarvesh.friend = sarvesh
-        messageSarvesh.text = "Hi, this is Sarvesh Sharma"
-        messageSarvesh.date = NSDate().addingTimeInterval(-3*60)
-        messageSarvesh.isSender = NSNumber(booleanLiteral: false) as Bool
-        
-        let messageSarvesh2 = Message(context: context)
-        messageSarvesh2.friend = sarvesh
-        messageSarvesh2.text = "Hi"
-        messageSarvesh2.date = NSDate().addingTimeInterval(-1*60)
-        messageSarvesh2.isSender = NSNumber(booleanLiteral: false) as Bool
-        
-        let messageSarvesh3 = Message(context: context)
-        messageSarvesh3.friend = sarvesh
-        messageSarvesh3.text = "Hi, this is Chutiya Channa Hi, this is Chutiya Channa Hi, this is Chutiya Channa Hi, this is Chutiya Channa Hi, this is Chutiya Channa"
-        messageSarvesh3.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh3.isSender = NSNumber(booleanLiteral: false) as Bool
-        
-        let messageSarvesh4 = Message(context: context)
-        messageSarvesh4.friend = sarvesh
-        messageSarvesh4.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh4.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh4.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let messageSarvesh5 = Message(context: context)
-        messageSarvesh5.friend = sarvesh
-        messageSarvesh5.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh5.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh5.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let messageSarvesh6 = Message(context: context)
-        messageSarvesh6.friend = sarvesh
-        messageSarvesh6.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh6.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh6.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let messageSarvesh7 = Message(context: context)
-        messageSarvesh7.friend = sarvesh
-        messageSarvesh7.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh7.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh7.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let messageSarvesh8 = Message(context: context)
-        messageSarvesh8.friend = sarvesh
-        messageSarvesh8.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh8.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh8.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let messageSarvesh9 = Message(context: context)
-        messageSarvesh9.friend = sarvesh
-        messageSarvesh9.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh9.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh9.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let messageSarvesh10 = Message(context: context)
-        messageSarvesh10.friend = sarvesh
-        messageSarvesh10.text = "Ha be tu ek number ka chutiya aur lodu hai"
-        messageSarvesh10.date = NSDate().addingTimeInterval(-0*60)
-        messageSarvesh10.isSender = NSNumber(booleanLiteral: true) as Bool
-        
-        let rishabh = Friend(context: context)
-        rishabh.name = "Rishabh Sharma"
-        rishabh.profileImageName = "rishabhProfile"
-        
-        let messageRishabh = Message(context: context)
-        messageRishabh.friend = rishabh
-        messageRishabh.text = "Hi, this is Rishabh Sharma"
-        messageRishabh.date = NSDate().addingTimeInterval(-60*24*60)
-        messageRishabh.isSender = NSNumber(booleanLiteral: false) as Bool
-        
-        let shubham = Friend(context: context)
-        shubham.name = "Shubham Sharma"
-        shubham.profileImageName = "profileShubham"
-        
-        let messageShubham = Message(context: context)
-        messageShubham.friend = shubham
-        messageShubham.text = "Hi, this is Shubham Sharma"
-        messageShubham.date = NSDate().addingTimeInterval(-60*60*24*8)
-        messageShubham.isSender = NSNumber(booleanLiteral: false) as Bool
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        let samarth = IncomingMessage.createFriend(name: "Samarth Paboowal", profileImageName: "profileImage")
+        IncomingMessage.createMessage(newFriend: samarth, text: "Hi!", timeAgo: 5)
+        IncomingMessage.createMessage(newFriend: samarth, text: "Hi!", timeAgo: 4, isSender: true)
+        IncomingMessage.createMessage(newFriend: samarth, text: "Who is this?", timeAgo: 3, isSender: true)
+        IncomingMessage.createMessage(newFriend: samarth, text: "I am Samarth Paboowal", timeAgo: 2)
+        IncomingMessage.createMessage(newFriend: samarth, text: "Oh!", timeAgo: 1, isSender: true)
+        IncomingMessage.createMessage(newFriend: samarth, text: "I remember you.", timeAgo: 0, isSender: true)
         
         loadData()
     }

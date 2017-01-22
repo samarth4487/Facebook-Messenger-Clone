@@ -17,6 +17,7 @@
 		105254F81E27E8FF0012A263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105254F71E27E8FF0012A263 /* Assets.xcassets */; };
 		105254FB1E27E8FF0012A263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105254F91E27E8FF0012A263 /* LaunchScreen.storyboard */; };
 		105255061E2808240012A263 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105255051E2808240012A263 /* MessageCell.swift */; };
+		10B4EC1D1E34B73E000EA92C /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4EC1C1E34B73E000EA92C /* IncomingMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		105254FA1E27E8FF0012A263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105254FC1E27E8FF0012A263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105255051E2808240012A263 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		10B4EC1C1E34B73E000EA92C /* IncomingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		105254EC1E27E8FF0012A263 /* Demo Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				10B4EC1B1E34B729000EA92C /* Model */,
 				105255041E2808000012A263 /* View */,
 				105255031E2807F70012A263 /* Controller */,
 				105254ED1E27E8FF0012A263 /* AppDelegate.swift */,
@@ -93,6 +96,14 @@
 				101596061E2B72FA00F2D719 /* ChatLogCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		10B4EC1B1E34B729000EA92C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10B4EC1C1E34B73E000EA92C /* IncomingMessage.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				101596051E2B701A00F2D719 /* ChatLogController.swift in Sources */,
+				10B4EC1D1E34B73E000EA92C /* IncomingMessage.swift in Sources */,
 				101596091E2B7D4100F2D719 /* CustomTabBarController.swift in Sources */,
 				105254F61E27E8FF0012A263 /* Demo_Messenger.xcdatamodeld in Sources */,
 				105254F01E27E8FF0012A263 /* FriendsController.swift in Sources */,
